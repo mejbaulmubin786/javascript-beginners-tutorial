@@ -4344,20 +4344,27 @@ You can create new HTML elements dynamically using the `document.createElement()
 > **Syntax & Example:**
 
 ```javascript
-// Create a new element
-let newParagraph = document.createElement("p");
+// Select the <ul> element
+let ulElement = document.querySelector("ul");
 
-// Add text content to the new element
-newParagraph.innerText = "This is a dynamically created paragraph.";
+// Create a new <li> element
+let newParagraph = document.createElement("li");
 
-// Append the new element to an existing parent element
-let parentElement = document.getElementById("content");
-parentElement.appendChild(newParagraph);
+// Add text content to the new <li> element
+newParagraph.innerText =
+  "The DOM tree serves as a foundational structure that JavaScript can traverse and modify, enabling developers to construct intricate and dynamic web pages. (This is a dynamically created li element).";
 
-// Alternative: Use append() for modern browsers
+// Append the new <li> to the <ul>
+ulElement.appendChild(newParagraph);
+
+// Create a new <span> element
 let newSpan = document.createElement("span");
-newSpan.innerText = " Appended using append().";
-parentElement.append(newSpan);
+
+// Add text content to the <span> element
+newSpan.innerText = " (Appended using a span element)";
+
+// Append the <span> to the newly created <li>
+newParagraph.appendChild(newSpan);
 ```
 
 ### 15.01.02. Removing Elements
@@ -4368,15 +4375,13 @@ Elements can be removed using `removeChild()` or the more modern `remove()` meth
 
 ```javascript
 // Select the element to be removed
-let elementToRemove = document.getElementById("oldItem");
+let ulElement = document.querySelector("ul");
 
-// Remove the element using removeChild()
-let parentElement = elementToRemove.parentElement;
-parentElement.removeChild(elementToRemove);
+// Select the last child element of the <ul> and remove it
+ulElement.removeChild(ulElement.lastElementChild);
 
-// Alternative: Use remove() for modern browsers
-let anotherElementToRemove = document.getElementById("unusedItem");
-anotherElementToRemove.remove();
+// Select the first child element of the <ul> and remove it using the newer remove() method
+ulElement.firstElementChild.remove();
 ```
 
 ### 15.01.03. Replacing Elements
@@ -4386,16 +4391,21 @@ Replace an existing DOM element with another using the `replaceChild()` method.
 > **Syntax & Example:**
 
 ```javascript
-// Create a new element
-let replacementElement = document.createElement("h2");
-replacementElement.innerText = "This is the replacement element.";
+// Select the <ul> element
+let ulElement = document.querySelector("ul");
 
-// Select the element to replace
-let oldElement = document.getElementById("replaceMe");
+// Create a new <li> element
+let newListItem = document.createElement("li");
 
-// Replace the old element
-let parentElement = oldElement.parentElement;
-parentElement.replaceChild(replacementElement, oldElement);
+// Add text to the new <li> element
+newListItem.textContent =
+  "The DOM tree serves as a foundational structure that JavaScript can traverse and modify, enabling developers to construct intricate and dynamic web pages.(This is the new replaced item.)";
+
+// Select the child element to be replaced
+let itemToReplace = ulElement.children[3]; // Replacing the 4th item (index starts at 0)
+
+// Replace the old item with the new one
+ulElement.replaceChild(newListItem, itemToReplace);
 ```
 
 ---

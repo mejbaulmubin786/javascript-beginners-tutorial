@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>15.DOM.Advanced.html</title>
+
+    <!-- internal style -->
+    <style>
+      /* css selector: { property:value; } */
+      body {
+        font-family: arial;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <div class="sub-container">
+        <h1 class="heading-text" id="mainHeadingText">
+          <font>15. DOM (Advanced)</font>
+        </h1>
+
+        <h2 class="sub-heading-text" id="subHeadingText">
+          15.01. Dynamic DOM Manipulation
+        </h2>
+        <ul>
+          <li class="list-item">First Item.</li>
+          <li class="list-item">
+            Dynamic DOM manipulation involves creating, modifying, and deleting
+            elements and their attributes in real-time using JavaScript.
+          </li>
+          <li class="list-item">
+            Common methods include `createElement()`, `appendChild()`,
+            `removeChild()`, and `replaceChild()`.
+          </li>
+          <li class="list-item">
+            Developers can add interactivity and dynamic content to web pages by
+            manipulating the DOM tree.
+          </li>
+          <li class="list-item">Last Item.</li>
+        </ul>
+
+        <h2>15.02. Class Manipulation</h2>
+        <ul>
+          <li>
+            JavaScript provides methods to manipulate CSS classes for elements
+            dynamically.
+          </li>
+          <li>
+            Methods like `classList.add()`, `classList.remove()`,
+            `classList.toggle()`, and `classList.contains()` are commonly used
+            for class manipulation.
+          </li>
+          <li>
+            Class manipulation helps in controlling element styles and behavior
+            programmatically.
+          </li>
+        </ul>
+
+        <h2>15.03. Handling Forms and Input Fields</h2>
+        <ul>
+          <li>
+            DOM provides methods to interact with forms and input fields, making
+            it easy to capture, validate, and process user inputs.
+          </li>
+          <li>
+            Commonly used methods include `getElementById()`, `querySelector()`,
+            and event listeners like `onchange`, `onsubmit`, and `onclick`.
+          </li>
+          <li>
+            Dynamic form handling can be achieved by modifying the `value`,
+            `checked`, and `selected` properties of input fields.
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- include external JavaScript - body section -->
+    <script src="./15.01.02.script.js"></script>
+  </body>
+</html>
